@@ -1,0 +1,297 @@
+{
+    "weapons" : [
+        {
+            "name" : "Isaac's Copy of Just Cause 4 (Steelbook cover)",
+            "description" : "It has lacklustre capabilities and unrefined mechanics, but it exists, so that's something.",
+            "type" : 2,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "bad mechanics", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Bleeding Edge",
+            "description" : "That's what you get for being on the cutting edge of everything!",
+            "type" : 0,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "untested mechanics", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Weapon of Choice",
+            "description" : "You always have a choice - Gandhi",
+            "type" : 0,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "alternate ending", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Literally a Brick",
+            "description" : "I don't know what else to tell you; it's literally a brick",
+            "type" : 2,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "brick", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "RNGesus' Dice",
+            "description" : "You thought we could be decent men, in an indecent time! But you were wrong. The world is cruel, and the only morality in a cruel world is chance!",
+            "type" : 2,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "luck", "value" : 5 }
+            ]
+        },
+        {
+            "name" : "Sword of the Simping King",
+            "description" : "The prized possession and family crest of the Simping King lineage, this sword led the Hubbard family to the height of their power.",
+            "type" : 0,
+            "rarity" : { "min" : 10, "max" : 14 },
+            "stats" : [
+                { "name" : "women", "value" : -100 },
+                { "name" : "based", "value" : 100 },
+                { "name" : "red pilled", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Nokia 3310",
+            "description" : "Men of old built great buildings from these. Now, they are a rare but powerful weapon",
+            "type" : 2,
+            "rarity" : { "min" : 1, "max" : 5 },
+            "stats" : [
+                { "name" : "indestructible", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Snapdragon's Melon",
+            "description" : "Rain down a mild form of confusion upon your enemies with Snapdragon's weapon of choice",
+            "type" : 2,
+            "rarity" : { "min" : 1, "max" : 14 },
+            "stats" : [
+                { "name" : "boi", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Morgann's Insult",
+            "description" : "U incestuous basterd!",
+            "type" : 1,
+            "rarity" : { "min" : 1, "max" : 5 },
+            "stats" : [
+                { "name" : "verbal assault", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Convenient Plot Device",
+            "description" : "It just worked out!",
+            "type" : 2,
+            "rarity" : { "min" : 5, "max" : 12 },
+            "stats" : [
+                { "name" : "convenience", "value" : 1 }
+            ]
+        }
+    ],
+    "armour" : [
+        {
+            "name" : "Jacob's Climbing Boots",
+            "description" : "Did you hear Jacob goes climbing, guys?",
+            "type" : 9,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "sex appeal", "value" : -100 }
+            ]
+        },
+        {
+            "name" : "Tyler's Will to Live",
+            "description" : "Hello darkness, my old friend",
+            "type" : 7,
+            "rarity" : { "min" : -1, "max" : -1 },
+            "stats" : [
+                { "name" : "depression", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "John's Tactical Cargo Pants",
+            "description" : "How'd you get these?",
+            "type" : 8,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "style", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Robert's Tactical Vest",
+            "description" : "A sturdy chestplate from a righteous man",
+            "type" : 7,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "style", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Plot Armour (Helmet)",
+            "description" : "If the writers can't kill you, then who can?!",
+            "type" : 6,
+            "rarity" : { "min" : 14, "max" : 14 },
+            "stats" : [
+                { "name" : "unkillable", "value" : 100 },
+                { "name" : "indestructible", "value" : 100 },
+                { "name" : "bad writing", "value" : 100 },
+                { "name" : "poor planning", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Plot Armour (Chestplate)",
+            "description" : "If the writers can't kill you, then who can?!",
+            "type" : 7,
+            "rarity" : { "min" : 14, "max" : 14 },
+            "stats" : [
+                { "name" : "unkillable", "value" : 100 },
+                { "name" : "indestructible", "value" : 100 },
+                { "name" : "bad writing", "value" : 100 },
+                { "name" : "poor planning", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Plot Armour (Leggings)",
+            "description" : "If the writers can't kill you, then who can?!",
+            "type" : 8,
+            "rarity" : { "min" : 14, "max" : 14 },
+            "stats" : [
+                { "name" : "unkillable", "value" : 100 },
+                { "name" : "indestructible", "value" : 100 },
+                { "name" : "bad writing", "value" : 100 },
+                { "name" : "poor planning", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Plot Armour (Boots)",
+            "description" : "If the writers can't kill you, then who can?!",
+            "type" : 9,
+            "rarity" : { "min" : 14, "max" : 14 },
+            "stats" : [
+                { "name" : "unkillable", "value" : 100 },
+                { "name" : "indestructible", "value" : 100 },
+                { "name" : "bad writing", "value" : 100 },
+                { "name" : "poor planning", "value" : 100 }
+            ]
+        }
+    ],
+    "food" : [
+        {
+            "name" : "Raw, Uncut Bullshit",
+            "description" : "All cock, no cum!",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "questionable food choices", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Speed Cola",
+            "description" : "Press those lips against the only one who truly moves you!",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "speed", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Chicken tendies",
+            "description" : "THE TENDIEEEEEEEES",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "tendies", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Deese",
+            "description" : "Nuts! Gottem.",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "gottem", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Good Soup",
+            "description" : "Everyday I wake up!",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "good soup", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "9.4 Metric Tons of Loam Topsoil",
+            "description" : "I'm so full!",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "calories", "value" : 2593 }
+            ]
+        },
+        {
+            "name" : "Timless Tams",
+            "description" : "What is the Tim, without the Tam?",
+            "type" : 3,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "tim", "value" : -1 },
+                { "name" : "tam", "value" : 1 }
+            ]
+        }
+    ],
+    "potions" : [
+        {
+            "name" : "Sam's God-Awful Vape",
+            "description" : "It gets the job done, but dear lord it tastes awful.",
+            "type" : 4,
+            "rarity" : { "min" : -1, "max" : 1 },
+            "stats" : [
+                { "name" : "bad breath", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Morgann's Sauce Code",
+            "description" : "Very saucey!",
+            "type" : 4,
+            "rarity" : { "min" : 0, "max" : 9 },
+            "stats" : [
+                { "name" : "morgann's power", "value" : 1 }
+            ]
+        },
+        {
+            "name" : "Kellythorn's Private Stash",
+            "description" : "A mage of old had a... collection. This is what's left",
+            "type" : 4,
+            "rarity" : { "min" : 3, "max" : 12 },
+            "stats" : [
+                { "name" : "cocaine addiction", "value" : 100 }
+            ]
+        },
+        {
+            "name" : "Red Pill",
+            "description" : "THERE WAS NEVER A POLITICAL SOLUTION",
+            "type" : 4,
+            "rarity" : { "min" : 3, "max" : 12 },
+            "stats" : [
+                { "name" : "based", "value" : 100 }
+            ]
+        }
+    ],
+    "spells" : [
+        {
+            "name" : "Bryce Status",
+            "description" : "Roasted",
+            "type" : 5,
+            "rarity" : { "min" : -5, "max" : 1 },
+            "stats" : [
+                { "name" : "muted", "value" : 1 }
+            ]
+        }
+    ]
+}

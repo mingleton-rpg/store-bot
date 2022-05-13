@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/Volumes/G-Drive/projects/mingleton rpg/store/env/lib/node_modules'
+export NPM_CONFIG_PREFIX='/Volumes/G-Drive/projects/mingleton rpg/store/env'
+export npm_config_prefix='/Volumes/G-Drive/projects/mingleton rpg/store/env'
+exec 'env/bin/node' "$@"

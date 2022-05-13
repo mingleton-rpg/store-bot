@@ -1,0 +1,14 @@
+{
+    "apiServer" : { 
+        "devServerDomain" : "http://localhost:4242/",
+        "productionServerDomain" : "https://dawson-rp-api.herokuapp.com/",
+        "passKey" : "joe_mama"
+    },
+    "bot" : { 
+        "botID" : "972647185374146560",
+        "guildID" : "618748256028983326"
+    },
+    "store" : { 
+        "refreshMs" : 3600000
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "weapons" : {
+        "price" : 100,
+        "stats" : [
+            { "name" : "damage", "value": 10 },
+            { "name" : "speed", "value": 15 },
+            { "name" : "durability", "value": 10 }
+        ],        
+        "stackAmount" : 1,
+        "rarityModifier" : 0.5
+    },
+    "armour" : {
+        "price" : 100,
+        "stats" : [
+            { "name" : "protection", "value": 10 },
+            { "name" : "durability", "value": 15 }
+        ],
+        "stackAmount" : 1,
+        "rarityModifier" : 0.5
+    },
+    "food" : {
+        "price" : 30,
+        "stats" : [ 
+            { "name" : "health", "value": 10 }
+        ],
+        "stackAmount" : 3,
+        "rarityModifier" : 1
+    },
+    "potions" : {
+        "price" : 50,
+        "stats" : [],
+        "stackAmount" : 3,
+        "rarityModifier" : 3
+    },
+    "spells" : {
+        "price" : 75,
+        "stats" : [],
+        "stackAmount" : 3,
+        "rarityModifier" : 5
+    }
+}
