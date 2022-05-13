@@ -15,6 +15,10 @@ const client = new Client({ intents: [
 /* Node-fetch */
 const fetch = require('node-fetch');
 
+/** Chance.JS */
+const Chance = require('chance');
+const chance = new Chance();
+
 
 
 // FILES ------------------------------------------------------------------------------
@@ -249,7 +253,7 @@ async function generateStore(userInfo, botInfo) {
 
 
 // VARIABLES ---------------------------------------------------------------------------
-const isProduction = false;
+const isProduction = true;
 const serverDomain = isProduction === true ? config.apiServer.productionServerDomain : config.apiServer.devServerDomain;
 const passKeySuffix = '?passKey=joe_mama';
 
@@ -335,7 +339,7 @@ client.on('interactionCreate', async interaction => {
 
             const tradePrice = interaction.options.getInteger('price', false);
             if (!tradePrice) { await returnEmbed(interaction, botInfo, 'Missing required fields!'); return; }
-            if (tradePrice < 1) { await returnEmbed(interaction, botInfo, `Yes, I thought of this too 😩`); return; }
+            if (tradePrice < 0) { await returnEmbed(interaction, botInfo, `Yes, I thought of this too 😩`); return; }
 
             // Get the user's account
             var response = await fetch(`${serverDomain}accounts/${userInfo.id}/${passKeySuffix}`);

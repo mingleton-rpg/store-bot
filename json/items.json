@@ -118,7 +118,8 @@
             "type" : 8,
             "rarity" : { "min" : -1, "max" : 1 },
             "stats" : [
-                { "name" : "style", "value" : 100 }
+                { "name" : "style", "value" : 100 },
+                { "name" : "storage", "value" : 100 }
             ]
         },
         {
