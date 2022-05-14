@@ -330,11 +330,12 @@ client.on('interactionCreate', async interaction => {
     console.log('NEW INTERACTION --------------------------------------------------------');
 
     if (interaction.isCommand()) {              // COMMAND INTERACTIONS
-        console.log('COMMAND INTERACTION');
+        console.log('COMMAND INTERACTION', interaction.commandName);
         await interaction.deferReply();
 
         if (interaction.commandName === 'store') {
-            await interaction.editReply(await generateStore(userInfo, botInfo));
+            const store = await generateStore(userInfo, botInfo);
+            await interaction.editReply(store);
         } else if (interaction.commandName === 'trade') { 
 
             const tradePrice = interaction.options.getInteger('price', false);
