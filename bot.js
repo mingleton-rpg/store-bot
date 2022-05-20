@@ -91,18 +91,6 @@ async function returnEmbed(interaction, botInfo, title, description, errorCode) 
     interaction.editReply({ embeds: [ embed ] });
 }
 
-/** Effectively the same as returnEmbed, but updates a message */
-async function updateEmbed(interaction, botInfo, title, description, errorCode) { 
-    var embed = new MessageEmbed({ 
-        title: title,
-        description: description,
-        color: botInfo.displayColor
-    });
-
-    if (errorCode) { embed.footer = { text: `Error ${errorCode}` } }
-    interaction.update({ embeds: [ embed ], components: [] });
-}
-
 /** Get a random number between the min & max */
 function getRandomArbitrary(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -250,6 +238,18 @@ async function generateStore(userInfo, botInfo) {
     });
 }
 
+/** Refresh the store's items */
+async function refreshStore() { 
+    storeItems = [];
+    storeItems.push(await generateItem('weapons'));
+    storeItems.push(await generateItem('weapons'));
+    storeItems.push(await generateItem('armour'));
+    storeItems.push(await generateItem('food'));
+    storeItems.push(await generateItem(getRandomArbitrary(0, 1) === 1 ? 'potions' : 'spells'));
+
+    return storeItems;
+}
+
 
 
 // VARIABLES ---------------------------------------------------------------------------
@@ -272,12 +272,7 @@ var storeRefresh = null;
      * 1x potion/spell
      */
     // Generate items
-    storeItems = [];
-    storeItems.push(await generateItem('weapons'));
-    storeItems.push(await generateItem('weapons'));
-    storeItems.push(await generateItem('armour'));
-    storeItems.push(await generateItem('food'));
-    storeItems.push(await generateItem(getRandomArbitrary(0, 1) === 1 ? 'potions' : 'spells'));
+    storeItems = await refreshStore();
 
     var time = Date.now();
     storeRefresh = new Date(time + config.store.refreshMs);
@@ -285,12 +280,8 @@ var storeRefresh = null;
     // Set an interval
     setInterval(async function () {
 
-        storeItems = [];
-        storeItems.push(await generateItem('weapons'));
-        storeItems.push(await generateItem('weapons'));
-        storeItems.push(await generateItem('armour'));
-        storeItems.push(await generateItem('food'));
-        storeItems.push(await generateItem(getRandomArbitrary(0, 1) === 1 ? 'potions' : 'spells'));
+        storeItems = null;
+        storeItems = await refreshStore();
 
         var time = Date.now();
         storeRefresh = new Date(time + config.store.refreshMs);
@@ -423,6 +414,13 @@ client.on('interactionCreate', async interaction => {
         } else if (interaction.commandName === 'changelog') { 
 
             let embeds = [];
+
+            embeds.push({
+                color: botInfo.displayColor,
+                title: 'Minor patch • 22w01b', 
+                description: `Fixed the store duping item statistics when refreshing`,
+                footer: { text: 'Released 20/05/2022'}
+            });
 
             embeds.push({
                 color: botInfo.displayColor,
