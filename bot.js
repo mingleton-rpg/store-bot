@@ -55,7 +55,11 @@ const commands = [
     {   // Changelog
         name: 'changelog',
         description: 'See what\'s changed recently'
-    }
+    },
+    // {   // Refresh
+    //     name: 'refresh',
+    //     description: 'REFRESH THE STORE'
+    // }
 ];
 
 const rest = new REST({ version: '9' }).setToken(process.env.DISCORD_API_KEY);
@@ -131,7 +135,8 @@ async function generateItem(category) {
     if (!categoryItems) { console.log('Invalid category provided'); return; }
 
     // Pick random item
-    const item = categoryItems[getRandomArbitrary(0, categoryItems.length - 1)];
+    const itemToPick = getRandomArbitrary(0, categoryItems.length - 1)
+    const item = categoryItems.slice(itemToPick, itemToPick + 1)[0];
 
     // Pick a random rarity
     const rarityID = getRandomArbitrary(item.rarity.min, item.rarity.max);
@@ -149,24 +154,26 @@ async function generateItem(category) {
     const stats = attributes[category];
 
     // Construct item 
-    const itemInfo = { 
+    var itemInfo = null;
+    itemInfo = { 
         name: item.name,
-        price: stats.price * absRarity,
+        price: Math.ceil(stats.price * (stats.rarityModifier * (absRarity * 2))),
         stackAmount: getRandomArbitrary(stats.stackAmount, type.maxStackAmount),
         description: item.description,
         type: type,
         rarity: rarity,
-        attributes: item.stats,
+        attributes: [...item.stats],
         isSold: false
     }
 
     // Assemble attributes
-    for (const attribute of stats.stats) { 
+    for (const attribute of stats.stats) {
         itemInfo.attributes.push({
             name: attribute.name,
             value: Math.ceil(attribute.value * (stats.rarityModifier * absRarity))
         });
     }
+    console.log(itemInfo.name, stats.stats, itemInfo.attributes);
 
     return(itemInfo);
 }
@@ -210,8 +217,7 @@ async function generateStore(userInfo, botInfo) {
         if (item.stackAmount > 1) { field.name += ` **(${item.stackAmount})**`; }
         if (item.isSold) { field.name = '~~' + field.name + '~~'; }
 
-        for (const attribute of item.attributes) { 
-            console.log(attribute);
+        for (const attribute of item.attributes) {
             if (attribute.value < 0) { field.value += ` | ${attribute.value} ${attribute.name}` }
             else { field.value += ` | +${attribute.value} ${attribute.name}` }
         }
@@ -230,6 +236,8 @@ async function generateStore(userInfo, botInfo) {
         i++;
     }
 
+    console.log(messageButtons);
+
     return ({ 
         embeds: [ embed ],
         components: [ 
@@ -240,6 +248,13 @@ async function generateStore(userInfo, botInfo) {
 
 /** Refresh the store's items */
 async function refreshStore() { 
+    /** Generate 5 random items & store them locally. These items will eventually be updated periodically.
+     * 2x weapons
+     * 1x armour
+     * 1x food
+     * 1x potion/spell
+     */
+
     storeItems = [];
     storeItems.push(await generateItem('weapons'));
     storeItems.push(await generateItem('weapons'));
@@ -265,12 +280,6 @@ var storeRefresh = null;
 // ASYNC - REFRESH STORE ---------------------------------------------------------------
 (async () => {
 
-    /** Generate 5 random items & store them locally. These items will eventually be updated periodically.
-     * 2x weapons
-     * 1x armour
-     * 1x food
-     * 1x potion/spell
-     */
     // Generate items
     storeItems = await refreshStore();
 
@@ -418,8 +427,11 @@ client.on('interactionCreate', async interaction => {
             embeds.push({
                 color: botInfo.displayColor,
                 title: 'Minor patch • 22w01b', 
-                description: `Fixed the store duping item statistics when refreshing`,
-                footer: { text: 'Released 20/05/2022'}
+                description: `
+                • Fixed the store duping item statistics when refreshing
+                • Balanced the store a lot
+                `,
+                footer: { text: 'Released 21/05/2022'}
             });
 
             embeds.push({
@@ -442,7 +454,15 @@ client.on('interactionCreate', async interaction => {
             });
 
             await interaction.editReply({ embeds: embeds });
-        }
+        } 
+        // else if (interaction.commandName === 'refresh') {
+        //     storeItems = null;
+        //     storeItems = await refreshStore();
+
+        //     var time = Date.now();
+        //     storeRefresh = new Date(time + config.store.refreshMs);
+        //     await interaction.editReply('refreshed store!');
+        // }
 
     } else if (interaction.isButton()) {        // BUTTON INTERACTIONS
 
