@@ -306,8 +306,8 @@ client.on('ready', async () => {
 
     client.user.setPresence({
         activities: [{ 
-            name: 'Bruh United',
-            type: 'PLAYING'
+            name: 'you make bad decisions',
+            type: 'WATCHING'
         }],
         status: 'online'
     });
